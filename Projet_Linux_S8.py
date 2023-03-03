@@ -5,19 +5,19 @@ import plotly.graph_objs as go
 import numpy as np
 import pandas as pd
 
-dfEURUSD = pd.read_csv(r'\\wsl.localhost\Ubuntu\home\edgar\projet_linux\prix.csv',sep=',',names=['Date','Valeur'])
+dfEURUSD = pd.read_csv("/home/edgar/projet_linux/prix.csv",sep=',',names=['Date','Valeur'])
 
-dfEURY = pd.read_csv(r'\\wsl.localhost\Ubuntu\home\edgar\projet_linux\prix2.csv',sep=',',names=['Date','Valeur'])
+dfEURY = pd.read_csv("/home/edgar/projet_linux/prix2.csv",sep=',',names=['Date','Valeur'])
 
-dfEURGBP = pd.read_csv(r'\\wsl.localhost\Ubuntu\home\edgar\projet_linux\prix3.csv',sep=',',names=['Date','Valeur'])
+dfEURGBP = pd.read_csv("/home/edgar/projet_linux/prix3.csv",sep=',',names=['Date','Valeur'])
 
-dfEURUSD2 = pd.read_csv(r'\\wsl.localhost\Ubuntu\home\edgar\projet_linux\prix.csv',sep=',',names=['Date','Valeur'])
+dfEURUSD2 = pd.read_csv("/home/edgar/projet_linux/prix.csv",sep=',',names=['Date','Valeur'])
 dfEURUSD2['Valeur'] = dfEURUSD2['Valeur'].apply(lambda x: str(x) + '$')
 
-dfEURY2 = pd.read_csv(r'\\wsl.localhost\Ubuntu\home\edgar\projet_linux\prix2.csv',sep=',',names=['Date','Valeur'])
+dfEURY2 = pd.read_csv("/home/edgar/projet_linux/prix2.csv",sep=',',names=['Date','Valeur'])
 dfEURY2['Valeur'] = dfEURY2['Valeur'].apply(lambda x: '¥' + str(x))
 
-dfEURGBP2 = pd.read_csv(r'\\wsl.localhost\Ubuntu\home\edgar\projet_linux\prix3.csv',sep=',',names=['Date','Valeur'])
+dfEURGBP2 = pd.read_csv("/home/edgar/projet_linux/prix3.csv",sep=',',names=['Date','Valeur'])
 dfEURGBP2['Valeur'] = dfEURGBP2['Valeur'].apply(lambda x: '£' + str(x))
 
 MoyEURUSD = round(np.mean(dfEURUSD['Valeur']),3)
