@@ -20,9 +20,9 @@ dfEURY2['Valeur'] = dfEURY2['Valeur'].apply(lambda x: '¥' + str(x))
 dfEURGBP2 = dfEURGBP
 dfEURGBP2['Valeur'] = dfEURGBP2['Valeur'].apply(lambda x: '£' + str(x))
 
-MoyEURUSD = round(np.mean(dfEURUSD['Valeur']),3)
-MaxEURUSD = round(max(dfEURUSD['Valeur']),3)
-MinEURUSD = round(min(dfEURUSD['Valeur']),3)
+MoyEURUSD = round(np.mean(dfEURUSD['Valeur']),4)
+MaxEURUSD = round(max(dfEURUSD['Valeur']),4)
+MinEURUSD = round(min(dfEURUSD['Valeur']),4)
 
 def style_cell(value):
     if value == MaxEURUSD:
