@@ -11,13 +11,13 @@ dfEURY = pd.read_csv("/home/edgar/projet_linux/prix2.csv",sep=',',names=['Date',
 
 dfEURGBP = pd.read_csv("/home/edgar/projet_linux/prix3.csv",sep=',',names=['Date','Valeur'])
 
-dfEURUSD2=dfEURUSD
+dfEURUSD2=DataFrame.copy(dfEURUSD, deep=True)
 dfEURUSD2['Valeur'] = dfEURUSD2['Valeur'].apply(lambda x: str(x) + '$')
 
-dfEURY2=dfEURY
+dfEURY2=DataFrame.copy(dfEURY, deep=True)
 dfEURY2['Valeur'] = dfEURY2['Valeur'].apply(lambda x: '¥' + str(x))
 
-dfEURGBP2=dfEURGBP
+dfEURGBP2=DataFrame.copy(dfEURGBP, deep=True)
 dfEURGBP2['Valeur'] = dfEURGBP2['Valeur'].apply(lambda x: '£' + str(x))
 
 MoyEURUSD = round(np.mean(dfEURUSD['Valeur']),4)
