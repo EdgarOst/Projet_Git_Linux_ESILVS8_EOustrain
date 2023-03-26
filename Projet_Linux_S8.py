@@ -82,7 +82,7 @@ fig1.update_layout(
                 dict(count=1, label="1m", step="month", stepmode="backward"),
                 dict(step="all")
             ]),
-            bgcolor="light blue",
+            backgroundcolor="light blue",
             activecolor ="grey"
         ),
         rangeslider=dict(
@@ -96,7 +96,7 @@ app.layout = html.Div(
     
     
     children=[html.H1(
-        children='Évolution du taux de change EUR/USD',style ={'textAlign':'center', 'color': 'white'
+        children='Évolution du taux de change EUR/USD',style ={'textAlign':'center', 'color': 'navy'
                                                                     ,'font-family':'Bodoni MT'}),
     
 
