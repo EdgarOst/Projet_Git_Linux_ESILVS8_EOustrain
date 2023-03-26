@@ -74,18 +74,17 @@ fig1.update_layout(
     xaxis=dict(
         rangeselector=dict(
             buttons=list([
-                dict(count=1, label="1h", step="hour", stepmode="backward"),
-                dict(count=12, label="12h", step="hour", stepmode="backward"),
-                dict(count=1, label="1j", step="day", stepmode="backward"),
-                dict(count=5, label="5j", step="day", stepmode="backward"),
-                dict(count=15, label="15j", step="day", stepmode="backward"),
-                dict(count=1, label="1m", step="month", stepmode="backward"),
-                dict(step="all")
+                dict(count=1, label="1h", step="hour", stepmode="backward", bgcolor = "white"),
+                dict(count=12, label="12h", step="hour", stepmode="backward", bgcolor = "white"),
+                dict(count=1, label="1j", step="day", stepmode="backward", bgcolor = "white"),
+                dict(count=5, label="5j", step="day", stepmode="backward", bgcolor = "white"),
+                dict(count=15, label="15j", step="day", stepmode="backward", bgcolor = "white"),
+                dict(count=1, label="1m", step="month", stepmode="backward", bgcolor = "white"),
+                dict(step="all", bgcolor = "white")
             ])
         ),
         rangeslider=dict(
-            visible=True,
-            bgcolor = "white"
+            visible=True
         ),
         type="date"
     )
@@ -102,7 +101,7 @@ app.layout = html.Div(
     dcc.Graph(
         id='example-graph',
         figure=fig1,
-        style ={'width': 800, 'height' :400, 'float': 'right', 'marginLeft' : '50px'}
+        style ={'width': '60%', 'height' : '40%', 'float': 'right', 'marginLeft' : '50px'}
     ),
     html.Div(
         style={
