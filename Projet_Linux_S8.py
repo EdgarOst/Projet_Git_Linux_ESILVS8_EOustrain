@@ -130,7 +130,7 @@ app.layout = html.Div(
     dcc.Graph(
         id='example-graph',
         figure=fig1,
-        style ={'width': '60%', 'height' : '100vh', 'float': 'right', 'marginLeft' : '50px'}
+        style ={'width': '60%', 'height' : '90vh', 'float': 'right', 'marginLeft' : '50px'}
     ),
     html.Div(
         style={
@@ -149,7 +149,7 @@ app.layout = html.Div(
         html.P(f'EURJPY : {dfEURY2.iloc[-1]["Date"]} - {dfEURY2.iloc[-1]["Valeur"]}'),
         html.P(f'EURGBP : {dfEURGBP2.iloc[-1]["Date"]} - {dfEURGBP2.iloc[-1]["Valeur"]}')
     ]),
-    html.Div(style = {'marginLeft': '100px', 'marginBottom' : '25px'},
+    html.Div(style = {'marginLeft': '100px', 'marginBottom' : '25px', 'width' : '350px'},
              children=[table]),
     html.Div(children=get_table())
              
