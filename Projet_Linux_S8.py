@@ -69,7 +69,7 @@ fig1.update_layout(
     title="Évolution du taux de change EUR/USD",
     xaxis_title="Date (Vous pouvez modifier la plage de dates des données en cliquant sur les boutons situés sur le graphique)",
     yaxis_title="Taux de change EUR/USD en $",
-    template='plotly_dark',
+    template='plotly_white',
     yaxis=dict(ticksuffix='$'),
     xaxis=dict(
         rangeselector=dict(
