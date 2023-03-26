@@ -74,14 +74,16 @@ fig1.update_layout(
     xaxis=dict(
         rangeselector=dict(
             buttons=list([
-                dict(count=1, label="1h", step="hour", stepmode="backward", bgcolor = "white"),
-                dict(count=12, label="12h", step="hour", stepmode="backward", bgcolor = "white"),
-                dict(count=1, label="1j", step="day", stepmode="backward", bgcolor = "white"),
-                dict(count=5, label="5j", step="day", stepmode="backward", bgcolor = "white"),
-                dict(count=15, label="15j", step="day", stepmode="backward", bgcolor = "white"),
-                dict(count=1, label="1m", step="month", stepmode="backward", bgcolor = "white"),
-                dict(step="all", bgcolor = "white")
-            ])
+                dict(count=1, label="1h", step="hour", stepmode="backward"),
+                dict(count=12, label="12h", step="hour", stepmode="backward"),
+                dict(count=1, label="1j", step="day", stepmode="backward"),
+                dict(count=5, label="5j", step="day", stepmode="backward"),
+                dict(count=15, label="15j", step="day", stepmode="backward"),
+                dict(count=1, label="1m", step="month", stepmode="backward"),
+                dict(step="all")
+            ]),
+            bgcolor="white",
+            activecolor ="grey"
         ),
         rangeslider=dict(
             visible=True
@@ -94,7 +96,7 @@ app.layout = html.Div(
     
     
     children=[html.H1(
-        children='Évolution du taux de change EUR/USD',style ={'textAlign':'center', 'color':'#FFD700'
+        children='Évolution du taux de change EUR/USD',style ={'textAlign':'center', 'color': 'light blue'
                                                                     ,'font-family':'Bodoni MT'}),
     
 
