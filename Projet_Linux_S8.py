@@ -149,7 +149,7 @@ app.layout = html.Div(
         html.P(f'EURJPY : {dfEURY2.iloc[-1]["Date"]} - {dfEURY2.iloc[-1]["Valeur"]}'),
         html.P(f'EURGBP : {dfEURGBP2.iloc[-1]["Date"]} - {dfEURGBP2.iloc[-1]["Valeur"]}')
     ]),
-    html.Div(style = {'marginLeft': '150px', 'marginBottom' : '25px'},
+    html.Div(style = {'marginLeft': '125px', 'marginBottom' : '25px'},
              children=[table]),
     html.Div(children=get_table())
              
