@@ -86,7 +86,7 @@ fig1.update_layout(
             activecolor ="grey"
         ),
         rangeslider=dict(
-            visible=True
+            visible=False
         ),
         type="date"
     )
