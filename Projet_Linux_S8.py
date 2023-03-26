@@ -129,7 +129,7 @@ app.layout = html.Div(
     dcc.Graph(
         id='example-graph',
         figure=fig1,
-        style ={'width': '60%', 'height' : '70vh', 'float': 'right', 'marginLeft' : '300px'}
+        style ={'width': '60%', 'height' : '70vh', 'float': 'right', 'marginLeft' : '50px'}
     ),
     html.Div(
         style={
@@ -137,7 +137,8 @@ app.layout = html.Div(
         'padding': '10px',
         'border-radius': '5px',
         'font-family': 'Bodoni MT',
-        'max-width' : '40%'
+        'max-width' : '20%',
+        'marginLeft' : '200px'
     },
     children=[
         html.H3('Quelques comparaisons avec d\'autres valeurs de change de l\'Euro'),
