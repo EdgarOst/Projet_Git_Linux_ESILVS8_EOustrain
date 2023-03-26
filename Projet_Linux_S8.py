@@ -37,8 +37,20 @@ def update_statistics():
     std = dfEURUSD_today['Valeur'].std()
     highest = dfEURUSD_today['Valeur'].max()
     lowest = dfEURUSD_today['Valeur'].min()
-
-    return {'Mean': mean, 'Volatility': std, 'Highest Value': highest, 'Lowest Value': lowest}
+    statistiques = html.Div(
+        style={
+        'border': '2px solid gray',
+        'padding': '10px',
+        'border-radius': '5px',
+        'font-family': 'Bodoni MT',
+        'max-width' : '30vh'
+    },
+    children=[
+        html.H3('Quelques comparaisons avec d\'autres valeurs de change de l\'Euro'),
+        html.P(f'EURUSD : {dfEURUSD2.iloc[-1]["Date"]} - {dfEURUSD2.iloc[-1]["Valeur"]}'),
+        html.P(f'EURJPY : {dfEURY2.iloc[-1]["Date"]} - {dfEURY2.iloc[-1]["Valeur"]}'),
+        html.P(f'EURGBP : {dfEURGBP2.iloc[-1]["Date"]} - {dfEURGBP2.iloc[-1]["Valeur"]}')
+    ]),
 
 schedule.every().day.at("20:00").do(update_statistics)
 
