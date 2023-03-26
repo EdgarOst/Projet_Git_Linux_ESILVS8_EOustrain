@@ -67,7 +67,7 @@ fig1 = go.Figure(data=go.Scatter(x=dfEURUSD['Date'], y=dfEURUSD['Valeur'], mode=
 
 fig1.update_layout(
     title="Évolution du taux de change EUR/USD",
-    xaxis_title="Date",
+    xaxis_title="Date (Vous pouvez modifier la plage de dates de données en faisant glisser le bouton sur la ligne située au dessus ou en cliquant sur les boutons situés sur le graphqiue",
     yaxis_title="Taux de change EUR/USD en $",
     template='plotly_dark',
     yaxis=dict(ticksuffix='$'),
