@@ -129,7 +129,7 @@ app.layout = html.Div(
             style={
         'border': '2px solid gray',
          'border-collapse': 'collapse'
-            )
+            })
              
     
 
