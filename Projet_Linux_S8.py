@@ -45,7 +45,7 @@ def update_statistics():
         'padding': '10px',
         'border-radius': '5px',
         'font-family': 'Bodoni MT',
-        'max-width' : '50vh',
+        'max-width' : '200px',
         'marginLeft' : '100px'
     },
     children=[
@@ -83,7 +83,7 @@ table = html.Table(
      html.Tr([html.Td((MoyEURUSD),style =style_cell(MoyEURUSD)), html.Td((MaxEURUSD),style =style_cell(MaxEURUSD)), html.Td((MinEURUSD),style =style_cell(MinEURUSD))])]
 )
 
-table_style = {'marginLeft': '100px',  'textAlign': 'left', 'margin-top' : '10px'}
+table_style = {'marginLeft': '100px'}
 
 app = dash.Dash()
 
@@ -138,10 +138,10 @@ app.layout = html.Div(
         'padding': '10px',
         'border-radius': '5px',
         'font-family': 'Bodoni MT',
-        'max-width' : '20%',
+        'max-width' : '200px',
         'marginLeft' : '100px',
-        'marginBottom' : '100px',
-        'margin-top' : '100px'
+        'marginBottom' : '50px',
+        'margin-top' : '50px'
     },
     children=[
         html.H3('Quelques comparaisons avec d\'autres valeurs de change de l\'Euro'),
