@@ -45,7 +45,8 @@ def update_statistics():
         'padding': '10px',
         'border-radius': '5px',
         'font-family': 'Bodoni MT',
-        'max-width' : '50vh'
+        'max-width' : '50vh',
+        'marginLeft' : '100px'
     },
     children=[
         html.H3('Statistiques de la journée du : '+date_actuelle_str),
@@ -82,7 +83,7 @@ table = html.Table(
      html.Tr([html.Td((MoyEURUSD),style =style_cell(MoyEURUSD)), html.Td((MaxEURUSD),style =style_cell(MaxEURUSD)), html.Td((MinEURUSD),style =style_cell(MinEURUSD))])]
 )
 
-table_style = {'marginLeft': '20vh', 'marginRight': '20vh', 'textAlign': 'left', 'margin-top' : '10px'}
+table_style = {'marginLeft': '100px',  'textAlign': 'left', 'margin-top' : '10px'}
 
 app = dash.Dash()
 
@@ -139,7 +140,8 @@ app.layout = html.Div(
         'font-family': 'Bodoni MT',
         'max-width' : '20%',
         'marginLeft' : '100px',
-        'marginBottom' : '100px'
+        'marginBottom' : '100px',
+        'margin-top' : '100px'
     },
     children=[
         html.H3('Quelques comparaisons avec d\'autres valeurs de change de l\'Euro'),
