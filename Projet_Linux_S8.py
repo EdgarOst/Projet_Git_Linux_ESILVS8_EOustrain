@@ -145,12 +145,6 @@ app.layout = html.Div(
         html.P(f'EURGBP : {dfEURGBP2.iloc[-1]["Date"]} - {dfEURGBP2.iloc[-1]["Valeur"]}')
     ]),
     html.Div(children=[table]),
-    html.Div(children=[
-        html.H2('Stock Statistics'),
-        html.Table(id='stats-table', children=[
-            html.Tr([html.Td(stat), html.Td(id=stat)]) for stat in update_statistics().keys()
-        ])
-    ]),
     html.Div(children=get_table())
              
     
