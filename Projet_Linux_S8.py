@@ -82,7 +82,7 @@ fig1.update_layout(
                 dict(count=1, label="1m", step="month", stepmode="backward"),
                 dict(step="all")
             ]),
-            backgroundcolor="light blue",
+            bgcolor="navy",
             activecolor ="grey"
         ),
         rangeslider=dict(
