@@ -4,6 +4,8 @@ from dash import html
 import plotly.graph_objs as go
 import numpy as np
 import pandas as pd
+import schedule
+from datetime import datetime
 
 dfEURUSD = pd.read_csv("/home/ec2-user/prixUSD.csv",sep=',',names=['Date','Valeur'])
 
@@ -20,9 +22,23 @@ dfEURY2['Valeur'] = dfEURY2['Valeur'].apply(lambda x: '¥' + str(x))
 dfEURGBP2 = pd.read_csv("/home/ec2-user/prixGBP.csv",sep=',',names=['Date','Valeur'])
 dfEURGBP2['Valeur'] = dfEURGBP2['Valeur'].apply(lambda x: '£' + str(x))
 
+current_date = datetime.now().date()
+
+dfEURUSD_today = dfEURUSD[dfEURUSD['Date'].dt.date == current_date]
+
 MoyEURUSD = round(np.mean(dfEURUSD['Valeur']),4)
 MaxEURUSD = round(max(dfEURUSD['Valeur']),4)
 MinEURUSD = round(min(dfEURUSD['Valeur']),4)
+
+def update_statistics():
+    mean = dfEURUSD_today['Valeur'].mean()
+    std = dfEURUSD_today['Valeur'].std()
+    highest = dfEURUSD_today['Valeur'].max()
+    lowest = dfEURUSD_today['Valeur'].min()
+
+    return {'Mean': mean, 'Volatility': std, 'Highest Value': highest, 'Lowest Value': lowest}
+
+schedule.every().day.at("20:00").do(update_statistics)
 
 def style_cell(value):
     if value == MaxEURUSD:
@@ -63,7 +79,6 @@ app.layout = html.Div(
                                                                     ,'font-family':'Bodoni MT'}),
     
 
-    # Ajouter le graphique à l'application Dash en utilisant dcc.Graph
     dcc.Graph(
         id='example-graph',
         figure=fig1,
@@ -83,11 +98,33 @@ app.layout = html.Div(
         html.P(f'EURJPY : {dfEURY2.iloc[-1]["Date"]} - {dfEURY2.iloc[-1]["Valeur"]}'),
         html.P(f'EURGBP : {dfEURGBP2.iloc[-1]["Date"]} - {dfEURGBP2.iloc[-1]["Valeur"]}')
     ]),
-    html.Div(children=[table])
+    html.Div(children=[table]),
+    html.Div(children=[
+        html.H2('Stock Statistics'),
+        html.Table(id='stats-table', children=[
+            html.Tr([html.Td(stat), html.Td(id=stat)]) for stat in update_statistics().keys()
+        ])
+    ])
              
     
 
 ])
+
+
+@app.callback(dash.dependencies.Output('stats-table', 'children'),
+              [dash.dependencies.Input('interval-component', 'n_intervals')])
+def update_table(n):
+    stats = update_statistics()
+    return [html.Tr([html.Td(stat), html.Td(stats[stat])]) for stat in stats.keys()]
+
+current_time = datetime.now()
+
+next_time = current_time + timedelta(seconds=1)
+
+while datetime.now() < next_time:
+    pass
+
+schedule.run_pending()
 
 if __name__ == '__main__':
     app.run_server(host = "0.0.0.0", port = 8050, debug=True)
