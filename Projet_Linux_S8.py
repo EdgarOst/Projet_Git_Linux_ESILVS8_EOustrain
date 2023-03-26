@@ -45,7 +45,7 @@ def update_statistics():
         'padding': '10px',
         'border-radius': '5px',
         'font-family': 'Bodoni MT',
-        'width' : '300px',
+        'width' : '350px',
         'marginLeft' : '100px'
     },
     children=[
@@ -130,7 +130,7 @@ app.layout = html.Div(
     dcc.Graph(
         id='example-graph',
         figure=fig1,
-        style ={'width': '60%', 'height' : '70vh', 'float': 'right', 'marginLeft' : '50px'}
+        style ={'width': '60%', 'height' : '100vh', 'float': 'right', 'marginLeft' : '50px'}
     ),
     html.Div(
         style={
@@ -138,7 +138,7 @@ app.layout = html.Div(
         'padding': '10px',
         'border-radius': '5px',
         'font-family': 'Bodoni MT',
-        'width' : '300px',
+        'width' : '350px',
         'marginLeft' : '100px',
         'marginBottom' : '25px',
         'margin-top' : '50px'
