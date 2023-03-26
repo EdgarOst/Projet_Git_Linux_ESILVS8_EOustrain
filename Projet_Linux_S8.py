@@ -138,7 +138,8 @@ app.layout = html.Div(
         'border-radius': '5px',
         'font-family': 'Bodoni MT',
         'max-width' : '20%',
-        'marginLeft' : '200px'
+        'marginLeft' : '100px',
+        'marginBottom' : '100px'
     },
     children=[
         html.H3('Quelques comparaisons avec d\'autres valeurs de change de l\'Euro'),
