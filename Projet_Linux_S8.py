@@ -70,7 +70,23 @@ fig1.update_layout(
     xaxis_title="Date",
     yaxis_title="Taux de change EUR/USD en $",
     template='plotly_dark',
-    yaxis=dict(ticksuffix='$')
+    yaxis=dict(ticksuffix='$'),
+    xaxis=dict(
+        rangeselector=dict(
+            buttons=list([
+                dict(count=1, label="1h", step="hour", stepmode="backward"),
+                dict(count=12, label="12h", step="hour", stepmode="backward"),
+                dict(count=1, label="1j", step="day", stepmode="backward"),
+                dict(count=5, label="5j", step="day", stepmode="backward"),
+                dict(count=15, label="15j", step="day", stepmode="backward"),
+                dict(count=1, label="1m", step="month", stepmode="backward"),
+            ])
+        ),
+        rangeslider=dict(
+            visible=True
+        ),
+        type="date"
+    )
 )
 
 app.layout = html.Div(
