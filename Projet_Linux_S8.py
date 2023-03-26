@@ -113,12 +113,6 @@ app.layout = html.Div(
 ])
 
 
-@app.callback(dash.dependencies.Output('stats-table', 'children'),
-              [dash.dependencies.Input('interval-component', 'n_intervals')])
-def update_table(n):
-    stats = update_statistics()
-    return [html.Tr([html.Td(stat), html.Td(stats[stat])]) for stat in stats.keys()]
-
 current_time = datetime.now()
 
 next_time = current_time + timedelta(seconds=1)
