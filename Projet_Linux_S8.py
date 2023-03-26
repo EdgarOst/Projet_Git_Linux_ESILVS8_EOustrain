@@ -45,7 +45,7 @@ def update_statistics():
         'padding': '10px',
         'border-radius': '5px',
         'font-family': 'Bodoni MT',
-        'max-width' : '30vh'
+        'max-width' : '50vh'
     },
     children=[
         html.H3('Statistiques de la journée du : '+date_actuelle_str),
@@ -137,7 +137,7 @@ app.layout = html.Div(
         'padding': '10px',
         'border-radius': '5px',
         'font-family': 'Bodoni MT',
-        'max-width' : '30vh'
+        'max-width' : '50vh'
     },
     children=[
         html.H3('Quelques comparaisons avec d\'autres valeurs de change de l\'Euro'),
