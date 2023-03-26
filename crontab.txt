@@ -1,0 +1,4 @@
+### Script contenu dans mon crontab 
+
+*/5 * * * * /home/ec2-user/scrap_projet.sh
+*/5 * * * * /home/ec2-user/MAJ_Dash.sh
