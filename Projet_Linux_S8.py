@@ -68,11 +68,11 @@ def get_table():
 
 def style_cell(value):
     if value == MaxEURUSD:
-        return {'backgroundColor': 'green', 'color': 'white', 'fontWeight': 'bold', 'border': '1px solid black'}
+        return {'backgroundColor': 'light green', 'color': 'white', 'fontWeight': 'bold', 'border': '1px solid black'}
     elif value == MinEURUSD:
-        return {'backgroundColor': 'red', 'color': 'white', 'fontWeight': 'bold', 'border': '1px solid black'}
+        return {'backgroundColor': 'light red', 'color': 'white', 'fontWeight': 'bold', 'border': '1px solid black'}
     elif value == MoyEURUSD:
-        return {'backgroundColor': 'blue', 'color': 'white', 'fontWeight': 'bold', 'border': '1px solid black'}
+        return {'backgroundColor': 'light blue', 'color': 'white', 'fontWeight': 'bold', 'border': '1px solid black'}
 
 
 
