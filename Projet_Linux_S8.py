@@ -83,7 +83,7 @@ table = html.Table(
      html.Tr([html.Td((MoyEURUSD),style =style_cell(MoyEURUSD)), html.Td((MaxEURUSD),style =style_cell(MaxEURUSD)), html.Td((MinEURUSD),style =style_cell(MinEURUSD))])]
 )
 
-table_style = {'marginLeft': '100px'}
+ 
 
 app = dash.Dash()
 
@@ -140,7 +140,7 @@ app.layout = html.Div(
         'font-family': 'Bodoni MT',
         'width' : '300px',
         'marginLeft' : '100px',
-        'marginBottom' : '50px',
+        'marginBottom' : '25px',
         'margin-top' : '50px'
     },
     children=[
@@ -149,7 +149,8 @@ app.layout = html.Div(
         html.P(f'EURJPY : {dfEURY2.iloc[-1]["Date"]} - {dfEURY2.iloc[-1]["Valeur"]}'),
         html.P(f'EURGBP : {dfEURGBP2.iloc[-1]["Date"]} - {dfEURGBP2.iloc[-1]["Valeur"]}')
     ]),
-    html.Div(children=[table]),
+    html.Div(style = {'marginLeft': '100px', 'marginBottom' : '25px'},
+             children=[table]),
     html.Div(children=get_table())
              
     
