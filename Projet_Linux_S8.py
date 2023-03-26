@@ -82,7 +82,7 @@ table = html.Table(
      html.Tr([html.Td((MoyEURUSD),style =style_cell(MoyEURUSD)), html.Td((MaxEURUSD),style =style_cell(MaxEURUSD)), html.Td((MinEURUSD),style =style_cell(MinEURUSD))])]
 )
 
-table_style = {'marginLeft': 'center', 'marginRight': 'center', 'textAlign': 'left', 'margin-top' : '10px'}
+table_style = {'marginLeft': '50px', 'marginRight': 'center', 'textAlign': 'left', 'margin-top' : '10px'}
 
 app = dash.Dash()
 
