@@ -5,7 +5,7 @@ import plotly.graph_objs as go
 import numpy as np
 import pandas as pd
 import schedule
-from datetime import datetime
+from datetime import datetime, timedelta
 
 dfEURUSD = pd.read_csv("/home/ec2-user/prixUSD.csv",sep=',',names=['Date','Valeur'])
 
