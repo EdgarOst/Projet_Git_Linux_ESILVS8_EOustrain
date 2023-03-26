@@ -37,7 +37,7 @@ def update_statistics():
     std = dfEURUSD_today['Valeur'].std()
     highest = dfEURUSD_today['Valeur'].max()
     lowest = dfEURUSD_today['Valeur'].min()
-    date_actuelle = datetime.datetime.now()
+    date_actuelle = datetime.now()
     statistiques = html.Div(
         style={
         'border': '2px solid gray',
