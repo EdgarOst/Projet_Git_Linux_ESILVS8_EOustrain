@@ -80,10 +80,12 @@ fig1.update_layout(
                 dict(count=5, label="5j", step="day", stepmode="backward"),
                 dict(count=15, label="15j", step="day", stepmode="backward"),
                 dict(count=1, label="1m", step="month", stepmode="backward"),
+                dict(step="all")
             ])
         ),
         rangeslider=dict(
-            visible=True
+            visible=True,
+            bgcolor = "white"
         ),
         type="date"
     )
