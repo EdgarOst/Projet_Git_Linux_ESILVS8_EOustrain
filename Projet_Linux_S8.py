@@ -70,7 +70,7 @@ def style_cell(value):
     if value == MaxEURUSD:
         return {'backgroundColor': '#90EE90', 'color': 'white', 'fontWeight': 'bold', 'border': '1px solid black'}
     elif value == MinEURUSD:
-        return {'backgroundColor': 'red', 'color': 'white', 'fontWeight': 'bold', 'border': '1px solid black'}
+        return {'backgroundColor': '#fa5e52', 'color': 'white', 'fontWeight': 'bold', 'border': '1px solid black'}
     elif value == MoyEURUSD:
         return {'backgroundColor': '#ADD8E6', 'color': 'white', 'fontWeight': 'bold', 'border': '1px solid black'}
 
@@ -149,7 +149,7 @@ app.layout = html.Div(
         html.P(f'EURJPY : {dfEURY2.iloc[-1]["Date"]} - {dfEURY2.iloc[-1]["Valeur"]}'),
         html.P(f'EURGBP : {dfEURGBP2.iloc[-1]["Date"]} - {dfEURGBP2.iloc[-1]["Valeur"]}')
     ]),
-    html.Div(style = {'marginLeft': '125px', 'marginBottom' : '25px'},
+    html.Div(style = {'marginLeft': '125px', 'marginBottom' : '25px', 'textAlign' : 'center'},
              children=[table]),
     html.Div(children=get_table())
              
