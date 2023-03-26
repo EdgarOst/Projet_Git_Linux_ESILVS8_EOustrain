@@ -37,6 +37,7 @@ def update_statistics():
     std = dfEURUSD_today['Valeur'].std()
     highest = dfEURUSD_today['Valeur'].max()
     lowest = dfEURUSD_today['Valeur'].min()
+    date_actuelle = datetime.datetime.now()
     statistiques = html.Div(
         style={
         'border': '2px solid gray',
@@ -46,13 +47,22 @@ def update_statistics():
         'max-width' : '30vh'
     },
     children=[
-        html.H3('Quelques comparaisons avec d\'autres valeurs de change de l\'Euro'),
-        html.P(f'EURUSD : {dfEURUSD2.iloc[-1]["Date"]} - {dfEURUSD2.iloc[-1]["Valeur"]}'),
-        html.P(f'EURJPY : {dfEURY2.iloc[-1]["Date"]} - {dfEURY2.iloc[-1]["Valeur"]}'),
-        html.P(f'EURGBP : {dfEURGBP2.iloc[-1]["Date"]} - {dfEURGBP2.iloc[-1]["Valeur"]}')
-    ]),
+        html.H3('Statistiques de la journée du : '+date_actuelle.date()),
+        html.P(f'Volatilité : {std}'),
+        html.P(f'Valeur la plus élevée : {highest}'),
+        html.P(f'Valeur la plus basse : {lowest}'),
+        html.P(f'Moyenne de la journée : {mean}')
+    ])
+    return statistiques
 
-schedule.every().day.at("20:00").do(update_statistics)
+
+
+def get_table():
+    now = datetime.now() 
+    today_at_8pm = datetime.combine(now.date(), time(hour=20)) 
+    if now.hour >= today_at_8pm.hour:  
+        return update_statistics()        
+
 
 def style_cell(value):
     if value == MaxEURUSD:
@@ -71,7 +81,7 @@ table = html.Table(
      html.Tr([html.Td((MoyEURUSD),style =style_cell(MoyEURUSD)), html.Td((MaxEURUSD),style =style_cell(MaxEURUSD)), html.Td((MinEURUSD),style =style_cell(MinEURUSD))])]
 )
 
-table_style = {'marginLeft': 'center', 'marginRight': 'center', 'textAlign': 'left'}
+table_style = {'marginLeft': 'center', 'marginRight': 'center', 'textAlign': 'left', 'margin-top' : '10px'}
 
 app = dash.Dash()
 
@@ -95,7 +105,10 @@ fig1.update_layout(
                 dict(step="all")
             ]),
             bgcolor="navy",
-            activecolor ="grey"
+            activecolor ="grey",
+            font=dict(
+                color="white"
+            )
         ),
         rangeslider=dict(
             visible=False
@@ -137,21 +150,14 @@ app.layout = html.Div(
         html.Table(id='stats-table', children=[
             html.Tr([html.Td(stat), html.Td(id=stat)]) for stat in update_statistics().keys()
         ])
-    ])
+    ]),
+    html.Div(children=get_table())
              
     
 
 ])
 
 
-current_time = datetime.now()
-
-next_time = current_time + timedelta(seconds=1)
-
-while datetime.now() < next_time:
-    pass
-
-schedule.run_pending()
 
 if __name__ == '__main__':
     app.run_server(host = "0.0.0.0", port = 8050, debug=True)
