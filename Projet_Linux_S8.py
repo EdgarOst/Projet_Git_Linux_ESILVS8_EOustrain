@@ -103,7 +103,7 @@ app.layout = html.Div(
     dcc.Graph(
         id='example-graph',
         figure=fig1,
-        style ={'width': '60%', 'height' : '80vh', 'float': 'right', 'marginLeft' : '50px'}
+        style ={'width': '60%', 'height' : '70vh', 'float': 'right', 'marginLeft' : '50px'}
     ),
     html.Div(
         style={
