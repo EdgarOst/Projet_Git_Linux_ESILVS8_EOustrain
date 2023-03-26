@@ -24,7 +24,9 @@ dfEURGBP2['Valeur'] = dfEURGBP2['Valeur'].apply(lambda x: '£' + str(x))
 
 current_date = datetime.now().date()
 
-dfEURUSD_today = dfEURUSD[dfEURUSD['Date'].dt.date == current_date]
+dfEURUSD3 = pd.read_csv("/home/ec2-user/prixUSD.csv",sep=',',names=['Date','Valeur'])
+dfEURUSD3['date'] = pd.to_datetime(dfEURUSD3['date'])
+dfEURUSD_today = dfEURUSD3[dfEURUSD3['Date'].dt.date == current_date]
 
 MoyEURUSD = round(np.mean(dfEURUSD['Valeur']),4)
 MaxEURUSD = round(max(dfEURUSD['Valeur']),4)
