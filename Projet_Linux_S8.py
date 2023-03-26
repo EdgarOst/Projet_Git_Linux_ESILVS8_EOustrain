@@ -103,7 +103,7 @@ app.layout = html.Div(
     dcc.Graph(
         id='example-graph',
         figure=fig1,
-        style ={'width': '60%', 'height' : '40%', 'float': 'right', 'marginLeft' : '50px'}
+        style ={'width': '60%', 'height' : '100%', 'float': 'right', 'marginLeft' : '50px'}
     ),
     html.Div(
         style={
@@ -125,11 +125,7 @@ app.layout = html.Div(
         html.Table(id='stats-table', children=[
             html.Tr([html.Td(stat), html.Td(id=stat)]) for stat in update_statistics().keys()
         ])
-    ],
-            style={
-        'border': '2px solid gray',
-         'border-collapse': 'collapse'
-            })
+    ])
              
     
 
