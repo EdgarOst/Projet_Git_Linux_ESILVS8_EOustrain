@@ -45,7 +45,7 @@ def update_statistics():
         'padding': '10px',
         'border-radius': '5px',
         'font-family': 'Bodoni MT',
-        'width' : '200px',
+        'width' : '300px',
         'marginLeft' : '100px'
     },
     children=[
@@ -138,7 +138,7 @@ app.layout = html.Div(
         'padding': '10px',
         'border-radius': '5px',
         'font-family': 'Bodoni MT',
-        'width' : '200px',
+        'width' : '300px',
         'marginLeft' : '100px',
         'marginBottom' : '50px',
         'margin-top' : '50px'
