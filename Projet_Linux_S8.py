@@ -48,7 +48,7 @@ def update_statistics():
         'max-width' : '30vh'
     },
     children=[
-        html.H3('Statistiques de la journée du : '+date_actuelle.date()),
+        html.H3('Statistiques de la journée du : '+date_actuelle_str),
         html.P(f'Volatilité : {std}'),
         html.P(f'Valeur la plus élevée : {highest}'),
         html.P(f'Valeur la plus basse : {lowest}'),
